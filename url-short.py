@@ -1,6 +1,8 @@
 #!/bin/python3
 import hashlib, base64
 import random
+import boto3
+
 
 baseuri = "https://somedomain-temp.com/"
 
