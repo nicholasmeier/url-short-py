@@ -29,3 +29,9 @@ def check_db(short_url):
         return True
     else:
         return False
+
+
+def generate_html(short_url):
+    f = open("temp.html","w")
+    f.write("<html><head><title>Redirecting...</title><meta http-equiv=\"refresh\" content=\"0; url=" + short_url + "\"/></head><body><a>Redirecting</a></html>")
+
