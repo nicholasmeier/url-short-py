@@ -13,7 +13,7 @@ def gen_short_url(long_url):
 
     #make sure short url doesn't already exist
     do:
-        short_url = hashlib.sha1(long_url + noise).encode("UTF-8")).hexdigest(5)
+        short_url = hashlib.sha1((long_url + noise).encode("UTF-8")).hexdigest()[:7]
         noise = noise + random.choice("qwertyuiopasdfghjklzxcvbnm1234567890")
     while (check_db(short_url))
     
