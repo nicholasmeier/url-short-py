@@ -1,10 +1,8 @@
 #!/bin/python3
 import hashlib, base64
 import random
-import boto3
+import pyshorteners
 
-
-baseuri = "https://somedomain-temp.com/"
 
 def gen_short_url(long_url):
     #init
@@ -13,7 +11,8 @@ def gen_short_url(long_url):
 
     #make sure short url doesn't already exist
     do:
-        short_url = hashlib.sha1(long_url + noise).encode("UTF-8")).hexdigest(5)
+        short_url = hashlib.((sha1long_url + noise).encode("UTF-8")).hexdigest()
+        short_url = short_url[:7]
         noise = noise + random.choice("qwertyuiopasdfghjklzxcvbnm1234567890")
     while (check_db(short_url))
     
