@@ -1,10 +1,13 @@
 #!/bin/python3
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 import hashlib, base64
 import random
-import boto3
 
 
-baseuri = "https://somedomain-temp.com/"
+
+
+#baseuri = "https://somedomain-temp.com/"
 
 def gen_short_url(long_url):
     #init
