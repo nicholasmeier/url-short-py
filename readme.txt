@@ -3,7 +3,7 @@
 # originally wanted to do this with AWS lambda and DynamoDB -> basically no time for that
 
 # Local Run instructions:
-# pip install Flask Flask-SQLAlchemy
+# pip install -r requirements.txt
 # python3 url-short.py
 # connect to localhost:5000
 # type in urls
