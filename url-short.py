@@ -1,5 +1,5 @@
 #!/bin/python3
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import hashlib, base64
 import random
@@ -49,8 +49,8 @@ def index():
 def redirect_shorturl(shorturl):
     urldb_entry = UrlDBE.query.filter_by(short_url=shorturl).first()
     if urldb_entry:
-        contentstring = "0; " + urldb_entry.long_url
-        return render_template('redirect.html', redirectContent=contentstring)
+        return redirect(urldb_entry.long_url)
+        #return render_template('redirect.html', redirectContent=contentstring)
         #return "<head><title>Redirecting...</title><meta http-equiv=\"refresh\" content=\"0; url=" + urldb_entry.long_url + "\"/></head><body><a>Redirecting</a>"
     else:
         return "Err: Broken link, sorry :("
