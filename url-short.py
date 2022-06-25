@@ -5,8 +5,16 @@ import hashlib, base64
 import random
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////urls.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////url-shortener.db'
 db = SQLAlchemy(app)
+
+class UrlDBE(db.model):
+    short_url = db.Column("shorturl", db.String(7), primary_key=True)
+    long_url = db.Column("longurl", db.String())
+    
+    def __init__(self, short_url, long_url):
+        self.short_url = short_url
+        self.long_url = long_url
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
