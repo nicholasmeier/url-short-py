@@ -47,9 +47,11 @@ def index():
 
 @app.route('/<shorturl>')
 def redirect_shorturl(shorturl):
-    longurl = UrlDBE.query.filter_by(short_url=shorturl).first()
-    if longurl:
-        return "<head><title>Redirecting...</title><meta http-equiv=\"refresh\" content=\"0; url=" + long_url + "\"/></head><body><a>Redirecting</a>"
+    urldb_entry = UrlDBE.query.filter_by(short_url=shorturl).first()
+    if urldb_entry:
+        contentstring = "0; " + urldb_entry.long_url
+        return render_template('redirect.html', redirectContent=contentstring)
+        #return "<head><title>Redirecting...</title><meta http-equiv=\"refresh\" content=\"0; url=" + urldb_entry.long_url + "\"/></head><body><a>Redirecting</a>"
     else:
         return "Err: Broken link, sorry :("
 
