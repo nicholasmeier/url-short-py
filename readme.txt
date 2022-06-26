@@ -14,7 +14,7 @@
 #
 # notes on current implementation:
 #  - originally wanted to do this with AWS lambda and DynamoDB -> arguably outside the scope of this assignment, with more time it could be done
-#	- See https://url-shortener-py-nmeier.herokuapp.com/9f508b3 for cloudarch map
+#	- See https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/02/05/1_Serverless_Architecture.png for cloudarch map
 #  - decided on a simpler implementation avaliable with python flask web app
 #
 #  - Could spend time to make front end look better, highly optional for a tool such as this
